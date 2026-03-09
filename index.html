@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Call Bridge Points Counter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <h1>Call Bridge Points Counter</h1>
+        <p>Track each round, edit anytime, and keep scores after reload.</p>
+      </div>
+      <div class="actions">
+        <button id="add-round-btn" type="button">Add Round</button>
+        <button id="export-btn" type="button" class="secondary">Export JSON</button>
+        <button id="reset-btn" type="button" class="danger">Reset All</button>
+      </div>
+    </header>
+
+    <section class="players" id="players"></section>
+
+    <section class="table-wrap">
+      <table id="score-table" aria-label="Call Bridge score table">
+        <thead>
+          <tr>
+            <th>Round</th>
+            <th data-player-header="0">Player 1</th>
+            <th data-player-header="1">Player 2</th>
+            <th data-player-header="2">Player 3</th>
+            <th data-player-header="3">Player 4</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="rounds-body"></tbody>
+        <tfoot>
+          <tr class="totals-row">
+            <th>Total</th>
+            <td data-total="0">0</td>
+            <td data-total="1">0</td>
+            <td data-total="2">0</td>
+            <td data-total="3">0</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section class="winner" id="winner-box" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
